@@ -25,13 +25,17 @@ JsonData = response.json()
 
 if Destination:
     if not os.path. exists(Destination):
-       print("mkdir {}".format(Destination))
+       Command = "mkdir {}".format(Destination)
+       os.system(Command)
 
 for json in JsonData:
+    print(json['name'] + " : ")
     if Destination:
         if not os.path.exists(Destination + "/" + json['name']):
-            print("git clone {} {}".format(json['clone_url'], Destination + "/" + json['name']))
+            Command = "git clone {} {}".format(json['clone_url'], Destination + "/" + json['name'])
+            os.system(Command)
         else:
-            print("cd {};git pull;cd -".format(Destination + "/" + json['name']))
+            Command = "cd {};git pull;cd - >/dev/null".format(Destination + "/" + json['name'])
+            os.system(Command)
     else:
         print(json['clone_url'])
