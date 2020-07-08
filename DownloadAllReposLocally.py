@@ -1,11 +1,12 @@
+#!/usr/bin/python3
 import requests
 import urllib.request
 import time
 import os
 import sys
 
-if (len(sys.argv) > 3 or len(sys.argv) < 2):
-    print("Format : main.py username [download_location]")
+if (len(sys.argv) > 3 or len(sys.argv) < 2) or sys.argv[1] == "--help":
+    print("Format : python3 DownloadAllReposLocally.py username [download_location]")
     exit(-1)
 
 Username = sys.argv[1]
