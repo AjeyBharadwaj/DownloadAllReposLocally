@@ -1,0 +1,4 @@
+Format : python3 DownloadAllReposLocally.py username [download_location]
+
+TODO : Pull private repos
+
